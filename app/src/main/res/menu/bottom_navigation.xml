@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/members"
+        android:icon="@drawable/ic_person_outline_black_24dp"
+        android:title="Members"/>
+
+    <item
+        android:id="@+id/events"
+        android:icon="@drawable/ic_apps_black_24dp"
+        android:title="Events"/>
+
+    <item
+        android:id="@+id/attendance"
+        android:icon="@drawable/ic_group_add_black_24dp"
+        android:title="Attendance"/>
+    <item
+        android:id="@+id/expenditure"
+        android:icon="@drawable/ic_monetization_on_black_24dp"
+        android:title="Expenditure"/>
+
+
+</menu>
