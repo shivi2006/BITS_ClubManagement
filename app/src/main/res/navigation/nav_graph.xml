@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/members">
+
+
+    <fragment
+        android:id="@+id/events"
+        android:name="com.example.shiviMittal.Events.Events_class1"
+        android:label="Events"
+        tools:layout="@layout/events_layout1" />
+    <fragment
+        android:id="@+id/attendance"
+        android:name="com.example.shiviMittal.Attendance_class1"
+        android:label="Attendance"
+        tools:layout="@layout/attendance_layout1" >
+        <action
+            android:id="@+id/action_attendance_to_myProfile"
+            app:destination="@id/myProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/expenditure"
+        android:name="com.example.shiviMittal.Expenditure_class1"
+        android:label="Expenditure"
+        tools:layout="@layout/expenditure_layout1" />
+    <fragment
+        android:id="@+id/members"
+        android:name="com.example.shiviMittal.Members.Members_class01"
+        android:label="Members"
+        tools:layout="@layout/members_layout01" >
+        <action
+            android:id="@+id/action_members_to_addMember"
+            app:destination="@id/addMember" />
+        <action
+            android:id="@+id/action_members_to_myProfile"
+            app:destination="@id/myProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMember"
+        android:name="com.example.shiviMittal.Members.AddMember"
+        android:label="Add New Member"
+        tools:layout="@layout/fragment_add_member">
+        <action
+            android:id="@+id/action_addMember_to_members"
+            app:destination="@id/members" />
+    </fragment>
+    <fragment
+        android:id="@+id/myProfile"
+        android:name="com.example.shiviMittal.Members.MyProfile"
+        android:label="fragment_my_profile"
+        tools:layout="@layout/fragment_my_profile" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.shiviMittal.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_members"
+            app:destination="@id/members" />
+    </fragment>
+</navigation>

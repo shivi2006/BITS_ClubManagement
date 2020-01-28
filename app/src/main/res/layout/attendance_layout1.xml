@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Attendance_class1">
+
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+
+            android:shadowColor="@color/colorPrimary"
+            android:text="Current Event- Cyber Security Workshop - 25 January 2020"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHighlight="@color/colorPrimaryDark"
+            app:fontFamily="@font/artifika" />
+
+        <ImageView
+            android:layout_width="183dp"
+            android:layout_height="161dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/security" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@color/colorPrimaryDark" />
+
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="105dp"
+            android:background="@color/colorPrimary"
+            android:text="Present"
+            android:textColor="#FAF8F4F4" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

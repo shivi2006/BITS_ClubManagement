@@ -2,64 +2,51 @@
 
 package com.example.shiviMittal
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentController
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity(){
+    private lateinit var navController: NavController
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.fragment_login)
+        //val button: Button =findViewById(R.id.login_button)
+        //button.setOnClickListener(object :View.OnClickListener {
+        //  override fun onClick(p0: View?) {
+        //    val action = LoginDirections.actionLoginToMembers()
+        //  p0!!.findNavController().navigate(action)
 
 
-    val listener = BottomNavigationView.OnNavigationItemSelectedListener{ menuItem:MenuItem ->
+        val bottomBar: BottomNavigationView = findViewById(R.id.bottom_bar)
+        navController = findNavController(R.id.nav_host_fragment)
+        //val topLevelDest =
+           // etOf(R.id.members, R.id.attendance, R.id.expenditure, R.id.events, R.id.members,R.id.login)
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.members, R.id.events, R.id.attendance, R.id.expenditure
+            )
+        )
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        bottomBar.setupWithNavController(navController)
 
 
-        when (menuItem.itemId) {
-            R.id.attendance -> {
-                val fragment1 = Attendance_class.newInstance()
-                openFragment(fragment1)
-                return@OnNavigationItemSelectedListener true
+    }}
 
-            }
-            R.id.members -> {
-                val fragment2 = Members_class.newInstance()
-               openFragment(fragment2)
-                return@OnNavigationItemSelectedListener true
-
-            }
-            R.id.events -> {
-                val fragment3 = Events_class.newInstance()
-               openFragment(fragment3)
-                return@OnNavigationItemSelectedListener true
-        }
-            R.id.expenditure -> {
-                val fragment4 = Expenditure_class.newInstance()
-                openFragment(fragment4)
-                return@OnNavigationItemSelectedListener true
-
-            }
-
-        }
-        false
-    }
-    private fun openFragment(fragment: Fragment){
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.container, fragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
-
-    }
-
-
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-
-            setContentView(R.layout.activity_main)
-            val bottomBar: BottomNavigationView = findViewById(R.id.bottom_bar)
-            bottomBar.setOnNavigationItemSelectedListener(listener)
-
-
-        }
-    }
