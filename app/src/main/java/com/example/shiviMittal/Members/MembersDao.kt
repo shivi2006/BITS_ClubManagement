@@ -10,7 +10,7 @@ interface MembersDao {
     @Insert
     fun insertAll(member:MemberDes)
 
-    @Query( "SELECT * FROM MemberDes")
+    @Query( "SELECT * FROM members")
     fun getAll():MutableList<MemberDes>
 
 }

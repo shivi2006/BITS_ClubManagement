@@ -1,7 +1,7 @@
 package com.example.shiviMittal.Members
 import androidx.room.Entity
 
-@Entity(primaryKeys=["name","position","contact"])
+@Entity(primaryKeys=["contact"],tableName = "members")
 
 class MemberDes(
     var name:String,

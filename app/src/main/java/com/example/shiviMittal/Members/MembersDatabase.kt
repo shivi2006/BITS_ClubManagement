@@ -11,5 +11,5 @@ import androidx.room.RoomDatabase
 abstract class MembersDatabase: RoomDatabase() {
    abstract fun getMembersDao():MembersDao
 
-
 }
+

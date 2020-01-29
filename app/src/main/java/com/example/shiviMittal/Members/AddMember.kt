@@ -19,7 +19,15 @@ import androidx.room.Room
 import com.example.shiviMittal.R
 
 class AddMember : Fragment() {
+    interface  Listener{
+        fun callback( member :MemberDes ){
+
+        }
+
+    }
+
     lateinit var globalcontext: Context
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,51 +44,42 @@ class AddMember : Fragment() {
         val button = view.findViewById<Button>(R.id.button_save)
 
 
-        globalcontext = getActivity()!!.applicationContext
+        globalcontext = activity!!.applicationContext
         val db: MembersDatabase = Room.databaseBuilder(
             globalcontext,
             MembersDatabase::class.java,
-            "members_database"
+            "Members_database"
         ).allowMainThreadQueries().build()
         Log.d("AddMember", "Database created")
 
 
-        button.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View?) {
+        button.setOnClickListener { view ->
+            if (TextUtils.isEmpty((name.text.toString())) && TextUtils.isEmpty(position.text.toString())) {
+                Toast.makeText(
+                    globalcontext,
+                    R.string.empty_not_saved,
+                    Toast.LENGTH_LONG
+                ).show()
+            } else {
+                val members = MemberDes(
+                    name.text.toString(),
+                    position.text.toString(),
+                    contact.text.toString()
+                )
 
-                if (TextUtils.isEmpty((name.text.toString())) && TextUtils.isEmpty(position.text.toString())) {
-                    Toast.makeText(
-                        globalcontext,
-                        R.string.empty_not_saved,
-                        Toast.LENGTH_LONG
-                    ).show()
-                } else {
-                    val members = MemberDes(
-                        name.text.toString(),
-                        position.text.toString(),
-                        contact.text.toString()
-                    )
+                db.getMembersDao().insertAll(members)
+                Log.d("AddMember", "Saved in database${db.getMembersDao().getAll()}")
+                val action = AddMemberDirections.actionAddMemberToMembers()
+                view!!.findNavController().navigate(action)
+                //  val intent= Intent()
+                // startActivity(intent)
 
-                    db.getMembersDao().insertAll(members)
-                    Log.d("AddMember", "Saved in database")
-                    val action = AddMemberDirections.actionAddMemberToMembers()
-                    view!!.findNavController().navigate(action)
-                    //  val intent= Intent()
-                    // startActivity(intent)
-
-                }
             }
         }
-        )
-
-
-
-           /*
-*/
 
 
     }
-
+/*
     override fun onResume() {
         super.onResume()
         globalcontext = getActivity()!!.applicationContext
@@ -89,7 +88,10 @@ class AddMember : Fragment() {
             MembersDatabase::class.java,
             "members_database"
         ).allowMainThreadQueries().build()
+
+        db.getMembersDao().insertAll(members)
+
         Log.d("AddMember", "Database created")
-    }
+    }*/
 }
 
