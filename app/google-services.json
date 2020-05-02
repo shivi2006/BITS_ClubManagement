@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "595291184387",
+    "firebase_url": "https://bitsclubs.firebaseio.com",
+    "project_id": "bitsclubs",
+    "storage_bucket": "bitsclubs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595291184387:android:b5d5ef83f5d31c965edd36",
+        "android_client_info": {
+          "package_name": "com.example.shiviMittal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595291184387-vjc5fu3g5s6jbp627bch5qokiqv16hdd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shiviMittal",
+            "certificate_hash": "40befde8e4bbe751953964cdf1a717c722d797a2"
+          }
+        },
+        {
+          "client_id": "595291184387-20k18766o22gv7qdttd6momrhk9pvmmj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz0frcOleVjJQvwD_oYDy2KlbUTtDn8-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595291184387-20k18766o22gv7qdttd6momrhk9pvmmj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

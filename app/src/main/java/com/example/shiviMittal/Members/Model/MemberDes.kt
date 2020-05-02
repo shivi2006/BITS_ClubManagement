@@ -1,4 +1,4 @@
-package com.example.shiviMittal.Members
+package com.example.shiviMittal.Members.Model
 import androidx.room.Entity
 
 @Entity(primaryKeys=["contact"],tableName = "members")

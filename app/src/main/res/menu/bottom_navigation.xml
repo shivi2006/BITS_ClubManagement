@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
     <item
-        android:id="@+id/members"
+        android:id="@+id/MyProfile"
         android:enabled="true"
         android:icon="@drawable/ic_person_outline_black_24dp"
+        android:iconTint="#9C27B0"
+        android:title="My Profile"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/Members"
+        android:enabled="true"
+        android:icon="@drawable/ic_apps_black_24dp"
+        android:iconTint="#00BCD4"
+
         android:title="Members"
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/events"
+        android:id="@+id/Chat"
         android:enabled="true"
-        android:icon="@drawable/ic_apps_black_24dp"
-        android:title="Events"
-        app:showAsAction="ifRoom"/>
-
-    <item
-        android:id="@+id/attendance"
-        android:enabled="true"
-        android:icon="@drawable/ic_group_add_black_24dp"
-        android:title="Attendance"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:title="Chat"
         android:visible="true"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/expenditure"
+        android:id="@+id/Events"
         android:enabled="true"
-        android:icon="@drawable/ic_monetization_on_black_24dp"
-        android:title="Expenditure"
-        app:showAsAction="ifRoom"
-        />
+        android:icon="@drawable/ic_insert_photo_black_24dp"
+        android:title="Events"
+        app:showAsAction="ifRoom" />
 
 
 </menu>

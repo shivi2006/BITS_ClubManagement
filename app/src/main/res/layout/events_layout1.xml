@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    tools:context=".Events.Events_class1">
-<LinearLayout
+    tools:context=".Chat.View.ChatView"
+    android:background="@drawable/background">
+
+    <LinearLayout
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical">
@@ -13,7 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recycler_view_events"/>
-</LinearLayout>
+
+
+    </LinearLayout>
+
+
 </FrameLayout>
 
 

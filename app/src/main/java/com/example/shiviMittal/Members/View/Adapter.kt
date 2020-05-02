@@ -1,23 +1,26 @@
-package com.example.shiviMittal.Members
+package com.example.shiviMittal.Members.View
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.shiviMittal.Members.Model.MemberDes
 import com.example.shiviMittal.R
 
-class Adapter(var member:MutableList<MemberDes>):RecyclerView.Adapter<Adapter.ViewHolder>() {
+class Adapter(var member: MutableList<MemberDes>):RecyclerView.Adapter<Adapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.members_list,parent,false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.members_list, parent, false)
+        )
     }
 
     override fun getItemCount(): Int {
         return member.size
     }
 
-    override fun onBindViewHolder(holder: Adapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text= member[position].name
         holder.position.text=member[position].position
         holder.contact.text=member[position].contact

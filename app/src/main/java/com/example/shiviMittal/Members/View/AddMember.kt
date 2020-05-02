@@ -1,9 +1,7 @@
-package com.example.shiviMittal.Members
+package com.example.shiviMittal.Members.View
 
 import android.content.ContentValues.TAG
 import android.content.Context
-import android.content.Intent
-import android.nfc.Tag
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -16,11 +14,15 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.room.Room
+
+import com.example.shiviMittal.Members.Model.MemberDes
+import com.example.shiviMittal.Members.Model.MembersDatabase
 import com.example.shiviMittal.R
+import com.google.firebase.firestore.FirebaseFirestore
 
 class AddMember : Fragment() {
     interface  Listener{
-        fun callback( member :MemberDes ){
+        fun callback( member : MemberDes){
 
         }
 
@@ -66,13 +68,21 @@ class AddMember : Fragment() {
                     position.text.toString(),
                     contact.text.toString()
                 )
+                //This members has to be updated on firebase
+                var firebaseFirestore= FirebaseFirestore.getInstance()
+                firebaseFirestore.collection("MemberDetails").add(members).addOnSuccessListener  { documentReference ->
+                    Log.d(TAG, "DocumentSnapshot written with ID: ${documentReference.id}")
+                }
+                    .addOnFailureListener { e ->
+                        Log.w(TAG, "Error adding document", e)
+                    }
 
-                db.getMembersDao().insertAll(members)
-                Log.d("AddMember", "Saved in database${db.getMembersDao().getAll()}")
-                val action = AddMemberDirections.actionAddMemberToMembers()
+                //db.getMembersDao().insertAll(members)
+                //Log.d("AddMember", "Saved in database${db.getMembersDao().getAll()}")
+                val action =
+                    AddMemberDirections.actionAddMemberToMembers()
                 view!!.findNavController().navigate(action)
-                //  val intent= Intent()
-                // startActivity(intent)
+
 
             }
         }

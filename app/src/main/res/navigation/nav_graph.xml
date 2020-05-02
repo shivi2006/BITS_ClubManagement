@@ -3,61 +3,75 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/members">
+    app:startDestination="@id/MyProfile">
 
 
     <fragment
-        android:id="@+id/events"
-        android:name="com.example.shiviMittal.Events.Events_class1"
-        android:label="Events"
+        android:id="@+id/Chat"
+        android:name="com.example.shiviMittal.Chat.View.ChatView"
+        android:label="Chat"
         tools:layout="@layout/events_layout1" />
     <fragment
-        android:id="@+id/attendance"
-        android:name="com.example.shiviMittal.Attendance_class1"
-        android:label="Attendance"
-        tools:layout="@layout/attendance_layout1" >
+        android:id="@+id/MyProfile"
+        android:name="com.example.shiviMittal.MyProfile.MyProfile"
+        android:label="My Profile"
+        tools:layout="@layout/my_profile">
         <action
-            android:id="@+id/action_attendance_to_myProfile"
-            app:destination="@id/myProfile" />
+            android:id="@+id/action_MyProfile_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
     </fragment>
     <fragment
-        android:id="@+id/expenditure"
-        android:name="com.example.shiviMittal.Expenditure_class1"
-        android:label="Expenditure"
-        tools:layout="@layout/expenditure_layout1" />
+        android:id="@+id/Events"
+        android:name="com.example.shiviMittal.Events.View.Events01"
+        android:label="Events"
+        tools:layout="@layout/events_layout1">
+        <action
+            android:id="@+id/action_Events_to_gallery"
+            app:destination="@id/gallery" />
+    </fragment>
     <fragment
-        android:id="@+id/members"
-        android:name="com.example.shiviMittal.Members.Members_class01"
+        android:id="@+id/Members"
+        android:name="com.example.shiviMittal.Members.View.Members_class01"
         android:label="Members"
-        tools:layout="@layout/members_layout01" >
+        tools:layout="@layout/members_layout01">
         <action
             android:id="@+id/action_members_to_addMember"
             app:destination="@id/addMember" />
-        <action
-            android:id="@+id/action_members_to_myProfile"
-            app:destination="@id/myProfile" />
     </fragment>
     <fragment
         android:id="@+id/addMember"
-        android:name="com.example.shiviMittal.Members.AddMember"
+        android:name="com.example.shiviMittal.Members.View.AddMember"
         android:label="Add New Member"
         tools:layout="@layout/fragment_add_member">
         <action
             android:id="@+id/action_addMember_to_members"
-            app:destination="@id/members" />
+            app:destination="@id/Members" />
     </fragment>
     <fragment
-        android:id="@+id/myProfile"
-        android:name="com.example.shiviMittal.Members.MyProfile"
-        android:label="fragment_my_profile"
-        tools:layout="@layout/fragment_my_profile" />
-    <fragment
-        android:id="@+id/login"
-        android:name="com.example.shiviMittal.Login"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.shiviMittal.EditProfileFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit_profile">
         <action
-            android:id="@+id/action_login_to_members"
-            app:destination="@id/members" />
+            android:id="@+id/action_editProfileFragment_to_MyProfile"
+            app:destination="@id/MyProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/gallery"
+        android:name="com.example.shiviMittal.Events.Gallery"
+        android:label="fragment_gallery"
+        tools:layout="@layout/fragment_gallery">
+        <action
+            android:id="@+id/action_gallery_to_Events"
+            app:destination="@id/Events" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewMember"
+        android:name="com.example.shiviMittal.ViewMember"
+        android:label="View Member"
+        tools:layout="@layout/fragment_view_member">
+        <action
+            android:id="@+id/action_viewMember_to_Members"
+            app:destination="@id/Members" />
     </fragment>
 </navigation>
