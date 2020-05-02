@@ -11,9 +11,6 @@ import com.example.shiviMittal.R
 
 class ChatListAdapter(var context: Context, var chatList: MutableList<ChatList>): RecyclerView.Adapter<ChatListAdapter.ViewHolder>() {
 
-
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.chat_list_row, parent, false)

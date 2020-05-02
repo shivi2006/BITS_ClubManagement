@@ -14,15 +14,11 @@ class  ChatViewModel( application: Application):AndroidViewModel(application){
     var repo: ChatRepo = ChatRepo(application)
 
     fun receiveData(): LiveData<MutableList<ChatRoom>> {
-
         val chat = liveData { emitSource(repo.receiveMessages()) }
         return chat
     }
 
-
     fun sendMessage(message:String){
         repo.sendNewTextMessage(message)
     }
-
-
-    }
+}

@@ -38,9 +38,5 @@ class ChatListView : Fragment() {
         }
 
         )
-
-
-
-
     }
 }

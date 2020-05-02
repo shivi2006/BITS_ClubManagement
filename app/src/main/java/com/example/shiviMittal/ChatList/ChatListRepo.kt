@@ -17,7 +17,6 @@ class ChatListRepo {
 
     fun callChatList(): LiveData<MutableList<ChatList>> {
 
-
         val firebaseFirestore = FirebaseFirestore.getInstance()
         firebaseFirestore.collection("users").document(sender_id)
             .collection("UserChats").addSnapshotListener { snapshot, e ->

@@ -13,15 +13,12 @@ class ChatRepo( application: Application) {
     val chat_object= Chatfirebase()
     var receiver_id:String = "f20190383"
     var sender_id:String = "f20190778"
+    val time:String = LocalDateTime.now().toString()
 
     fun receiveMessages():LiveData<MutableList<ChatRoom>> {
         val my_chat = chat_object.callDataFirebase(sender_id,receiver_id)
         return my_chat
     }
-
-
-    val time:String = LocalDateTime.now().toString()
-
 
     fun sendNewTextMessage( textInput:String){
         val chatRoom = ChatRoom(textInput, sender_id,time )
@@ -52,7 +49,7 @@ class ChatRepo( application: Application) {
                     //unreadno: "2",
                     //time: time
                     }
-                )//updating last message
+                )//updating last message..this has to be completed
     }
         }
 

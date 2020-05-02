@@ -35,18 +35,14 @@ class ChatView : AppCompatActivity(){
 
         chatViewModel = run { ViewModelProviders.of(this@ChatView).get(ChatViewModel::class.java) }
         chatViewModel.receiveData().observe(this, Observer {
-
             val adapter = Adpater_events(it)
             recyclerView.adapter = adapter
-        }
+        })
 
-        )
             val fab = findViewById(R.id.fab) as FloatingActionButton
             val editText= findViewById<EditText>(R.id.input)
 
-
-
-        fab.setOnClickListener { view ->
+            fab.setOnClickListener { view ->
 
             val input = editText.text.toString()
             if (TextUtils.isEmpty(input)) {
@@ -55,7 +51,6 @@ class ChatView : AppCompatActivity(){
                     Toast.LENGTH_LONG
                 ).show()
             } else {
-
                 chatViewModel.sendMessage(input)
             }
     }

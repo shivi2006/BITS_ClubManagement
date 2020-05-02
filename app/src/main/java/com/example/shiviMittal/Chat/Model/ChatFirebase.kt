@@ -38,14 +38,10 @@ class Chatfirebase {
                             )
                         list.add(messages)
 
-                        //add these messages to the list
                     }
-
                     messagelist.setValue(list)
-
-
                 }
-    }
+            }
     return messagelist
 }
 }
