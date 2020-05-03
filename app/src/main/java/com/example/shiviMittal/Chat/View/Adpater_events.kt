@@ -12,7 +12,7 @@ class Adpater_events(val list:MutableList<ChatRoom>):RecyclerView.Adapter<Adpate
 
     override fun onCreateViewHolder(p: ViewGroup, viewType: Int): ViewHolder {
         val view= LayoutInflater.from(p.context).inflate(R.layout.message,p,false)
-        return ViewHolder(view)
+        return ViewHolder(view) // message layout left
     }
 
     override fun onBindViewHolder(p: ViewHolder, position: Int) {
