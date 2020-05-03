@@ -2,6 +2,7 @@ package com.example.shiviMittal.Chat.Repository
 
 import android.app.Application
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.shiviMittal.Chat.Model.ChatRoom
@@ -31,25 +32,23 @@ class ChatRepo( application: Application) {
 
 
             firebaseFirestore.collection("chatRoom").document(sender_id + receiver_id)
-                .collection("messages").add(chatRoom)
-                .addOnSuccessListener { documentReference ->
-                    Log.d(
-                        ContentValues.TAG,
-                        "DocumentSnapshot written with ID: ${documentReference.id}"
-                    )//updating chatroom
+                .collection("messages").add(chatRoom).addOnSuccessListener { documentReference ->
+
+                    firebaseFirestore.collection("users").document(sender_id)
+                        .collection("UserChats").document(receiver_id).update(mapOf(
+                            "lastmsg" to textInput,
+                            "time" to time,
+                            "unreadno" to 2
+                        ))
+                        .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully updated!") }
+                        .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
+
+                        Log.d(ContentValues.TAG,
+                        "DocumentSnapshot written with ID: ${documentReference.id}")
                 }
                 .addOnFailureListener { e ->
                     Log.w(ContentValues.TAG, "Error adding document", e)
                 }
-
-
-                firebaseFirestore.collection("users").document(sender_id)
-                .collection("UserChats").document(receiver_id).set({
-                    //lastmsg:textInput,
-                    //unreadno: "2",
-                    //time: time
-                    }
-                )//updating last message..this has to be completed
     }
         }
 
