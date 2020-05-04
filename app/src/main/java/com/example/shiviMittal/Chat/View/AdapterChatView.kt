@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.shiviMittal.Chat.Model.ChatRoom
 import com.example.shiviMittal.R
 
-class Adpater_events(val list:MutableList<ChatRoom>):RecyclerView.Adapter<Adpater_events.ViewHolder>() {
+class AdapterChatView(val list:MutableList<ChatRoom>):RecyclerView.Adapter<AdapterChatView.ViewHolder>() {
 
     override fun onCreateViewHolder(p: ViewGroup, viewType: Int): ViewHolder {
         val view= LayoutInflater.from(p.context).inflate(R.layout.message,p,false)

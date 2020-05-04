@@ -9,8 +9,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.shiviMittal.Chat.View.Adpater_events
-import com.example.shiviMittal.Chat.ViewModel.ChatViewModel
 import com.example.shiviMittal.R
 
 class ChatListView : Fragment() {
