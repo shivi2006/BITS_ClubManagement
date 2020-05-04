@@ -12,8 +12,8 @@ class ChatListRepo {
 
     val sender_id: String = "f20190778"
     lateinit var my_chatlist: ChatList
-    lateinit var chatlist_users:MutableLiveData<MutableList<ChatList>>
-    lateinit var list: MutableList<ChatList>
+    var chatlist_users:MutableLiveData<MutableList<ChatList>> = MutableLiveData()
+    var list: MutableList<ChatList> = ArrayList()
 
     fun callChatList(): LiveData<MutableList<ChatList>> {
 

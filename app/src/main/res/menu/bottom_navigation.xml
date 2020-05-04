@@ -21,7 +21,7 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/Chat"
+        android:id="@+id/chatListView"
         android:enabled="true"
         android:icon="@drawable/ic_chat_black_24dp"
         android:title="Chat"

@@ -26,11 +26,11 @@ class MainActivity : AppCompatActivity(){
             getSupportActionBar()?.hide();
         }
         setContentView(R.layout.activity_main)
-        val bottomBar: BottomNavigationView = findViewById(R.id.bottom_bar)
+        val bottomBar = findViewById<BottomNavigationView>(R.id.bottom_bar)
         navController = findNavController(R.id.nav_host_fragment)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.MyProfile, R.id.Members, R.id.Chat, R.id.Events
+                R.id.MyProfile, R.id.Members, R.id.chatListView, R.id.Events
             )
         )
 

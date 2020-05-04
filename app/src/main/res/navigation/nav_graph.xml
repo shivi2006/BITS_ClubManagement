@@ -7,11 +7,6 @@
 
 
     <fragment
-        android:id="@+id/Chat"
-        android:name="com.example.shiviMittal.Chat.View.ChatView"
-        android:label="Chat"
-        tools:layout="@layout/events_layout1" />
-    <fragment
         android:id="@+id/MyProfile"
         android:name="com.example.shiviMittal.MyProfile.MyProfile"
         android:label="My Profile"
@@ -74,4 +69,8 @@
             android:id="@+id/action_viewMember_to_Members"
             app:destination="@id/Members" />
     </fragment>
+    <fragment
+        android:id="@+id/chatListView"
+        android:name="com.example.shiviMittal.ChatList.ChatListView"
+        android:label="ChatListView" />
 </navigation>
