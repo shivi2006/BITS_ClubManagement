@@ -16,9 +16,9 @@ import com.google.firebase.firestore.QuerySnapshot
 
 class Chatfirebase {
 
-    lateinit var messagelist: MutableLiveData<MutableList<ChatRoom>>
+    var messagelist: MutableLiveData<MutableList<ChatRoom>> = MutableLiveData()
     lateinit var messages: ChatRoom
-    lateinit var list: MutableList<ChatRoom>
+     var list: MutableList<ChatRoom> = ArrayList()
 
 
     fun callDataFirebase(sender_id: String, receiver_id: String): LiveData<MutableList<ChatRoom>> {
