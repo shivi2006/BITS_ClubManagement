@@ -34,7 +34,6 @@
             android:layout_width="343dp"
             android:layout_height="223dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="48dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/background_view"
             android:backgroundTint="@color/design_default_color_on_primary"
@@ -43,33 +42,34 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="0.516"
             app:layout_constraintVertical_chainStyle="spread" />
 
         <Button
             android:id="@+id/edit_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="76dp"
+            android:layout_height="48dp"
             android:background="#00BCD4"
             android:text="Edit Profile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.455" />
+            app:layout_constraintVertical_bias="0.392" />
 
         <View
             android:id="@+id/view2"
-            android:layout_width="343dp"
-            android:layout_height="345dp"
+            android:layout_width="326dp"
+            android:layout_height="298dp"
             android:background="@color/design_default_color_on_primary"
             android:backgroundTint="@color/design_default_color_on_primary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.779" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -99,18 +99,6 @@
             app:layout_constraintTop_toTopOf="@+id/view1"
             app:layout_constraintVertical_bias="1.0" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="95dp"
-            android:layout_height="178dp"
-            android:layout_marginTop="284dp"
-            app:layout_constraintBottom_toBottomOf="@+id/view2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.465"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.831" />
-
         <TextView
             android:id="@+id/textView5"
             android:layout_width="98dp"
@@ -122,7 +110,7 @@
             app:layout_constraintHorizontal_bias="0.169"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.091" />
+            app:layout_constraintVertical_bias="0.054" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/sign_out"
