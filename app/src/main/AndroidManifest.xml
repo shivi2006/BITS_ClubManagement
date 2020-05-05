@@ -20,6 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.shiviMittal.Members.View.AddMember"/>
+        <activity android:name=".Chat.View.ChatView" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

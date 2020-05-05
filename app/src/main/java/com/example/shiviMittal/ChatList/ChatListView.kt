@@ -1,6 +1,7 @@
 package com.example.shiviMittal.ChatList
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,8 @@ import com.example.shiviMittal.R
 
 class ChatListView : Fragment() {
 
+    lateinit var chatListViewModel: ChatListViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,18 +26,19 @@ class ChatListView : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val chatListViewModel : ChatListViewModel
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        val adapter = ChatListAdapter()
+        recyclerView.adapter = adapter
 
         chatListViewModel = run { ViewModelProviders.of(this@ChatListView).get(ChatListViewModel::class.java) }
         chatListViewModel.receiveChatList().observe(viewLifecycleOwner, Observer {
-
-            val adapter = ChatListAdapter(context!!,it)
-            recyclerView.adapter = adapter
+            Log.d("check chat", "receive data")
+            adapter.setData(it)
         }
 
         )
     }
 }
+

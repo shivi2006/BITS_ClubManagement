@@ -23,11 +23,13 @@ class ChatView : AppCompatActivity(){
         val chatViewModel: ChatViewModel
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-
-        chatViewModel = run { ViewModelProviders.of(this@ChatView).get(ChatViewModel::class.java) }
-        chatViewModel.receiveData().observe(this, Observer {
-            val adapter = AdapterChatView(it)
+            val adapter = AdapterChatView()
             recyclerView.adapter = adapter
+
+
+             chatViewModel = run { ViewModelProviders.of(this@ChatView).get(ChatViewModel::class.java) }
+             chatViewModel.receiveData().observe(this, Observer {
+                 adapter.setData(it)
         })
 
             val fab = findViewById(R.id.fab) as FloatingActionButton

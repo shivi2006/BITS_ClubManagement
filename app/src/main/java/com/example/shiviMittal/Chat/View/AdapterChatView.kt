@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.shiviMittal.Chat.Model.ChatRoom
 import com.example.shiviMittal.R
 
-class AdapterChatView(val list:MutableList<ChatRoom>):RecyclerView.Adapter<AdapterChatView.ViewHolder>() {
+class AdapterChatView():RecyclerView.Adapter<AdapterChatView.ViewHolder>() {
+
+
+    var list:MutableList<ChatRoom> = ArrayList()
 
     override fun onCreateViewHolder(p: ViewGroup, viewType: Int): ViewHolder {
         val view= LayoutInflater.from(p.context).inflate(R.layout.message,p,false)
@@ -22,6 +25,11 @@ class AdapterChatView(val list:MutableList<ChatRoom>):RecyclerView.Adapter<Adapt
 
     override fun getItemCount(): Int {
         return list.size
+    }
+
+    fun setData(list:MutableList<ChatRoom>){
+        this.list = list
+        notifyDataSetChanged()
     }
 
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
