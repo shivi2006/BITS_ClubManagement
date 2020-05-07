@@ -22,7 +22,7 @@ class ChatListRepo {
             .collection("UserChats").addSnapshotListener { snapshot, e ->
 
                 if (snapshot != null) {
-                    val i = 0
+                    var i = 0
                     while (i < snapshot.documents.size) {
                         my_chatlist =
                             ChatList(
@@ -32,6 +32,7 @@ class ChatListRepo {
                                 snapshot.documents[i]["unreadno"].toString()
                             )
                         list.add(my_chatlist)
+                        i++
                     }
                         chatlist_users.setValue(list)
                 }

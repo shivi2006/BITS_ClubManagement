@@ -28,7 +28,7 @@ class Chatfirebase {
 
                 if (snapshot != null) {
                     DocumentSnapshot.ServerTimestampBehavior.ESTIMATE
-                    val i = 0
+                    var i = 0
                     while (i < snapshot.documents.size) {
                         messages =
                             ChatRoom(
@@ -37,6 +37,7 @@ class Chatfirebase {
                                 snapshot.documents[i]["time"].toString()
                             )
                         list.add(messages)
+                        i++
 
                     }
                     messagelist.setValue(list)
